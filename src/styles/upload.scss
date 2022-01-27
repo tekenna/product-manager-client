@@ -1,0 +1,105 @@
+.uploads{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.2);
+    border-radius: 1rem;
+    max-width: 500px;
+
+    h3{
+        font-weight: 900;
+        text-align: center;
+    }
+    .base{
+        border: 3px solid red;
+        width: 3rem;
+        border-radius: 1rem;
+        padding: 0;
+    }
+    span{
+        font-size: 0.8rem;
+        padding: 1rem;
+        text-align: center;
+    }
+    form{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0 1rem;
+
+        .feild{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .image_wrapper{
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                width: 100%;
+                .file{
+                    width: 50%;
+                    margin-top: 1rem;
+                }
+                button{
+                    padding: 0.5rem;
+                    border: none;
+                    cursor: pointer;
+                    background: black;
+                    border-radius: 1rem;
+                    color: white;
+                }
+            }
+
+            label{
+                width: 30%;
+                position: relative;
+                font-size: 0.9rem;
+                span{
+                    color: red;
+                    position: absolute;
+                    top: -1.2rem;
+                    left: 1.9rem;
+                    font-size: 1rem;
+                }
+
+            }
+            input{
+                width: 70%;
+                background: rgba(128, 128, 128, 0.11);
+                color: gray;
+                padding: 0.5rem 1rem;
+                border-radius: 0.5rem;
+                border: none;
+                margin-bottom: 1rem;
+                outline: none;
+                text-align: center;
+            }
+            @media screen and (max-width: 1100px) {
+                display: flex;
+                flex-direction: column;
+                label{
+                    width: 100%;
+                }
+                input{
+                    width: 100%;
+                }
+            }
+        }
+        button{
+            padding: 0.5rem;
+            margin: 1rem 0;
+            border: none;
+            cursor: pointer;
+            background: black;
+            border-radius: 1rem;
+            color: white;
+        }
+    }
+    
+}

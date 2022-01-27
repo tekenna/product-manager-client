@@ -1,0 +1,53 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.app{
+    padding: 0 2rem;
+    .top{
+        padding: 1rem 0;
+        span{
+            font-family: 'Alfa Slab One', cursive;
+            color: red;
+            font-size: 1.5rem;
+            span{
+                color: black;
+            }
+        }
+    }
+    .icon{
+        font-size: 3rem;
+    }
+    .body{
+        display: flex;
+        width: 100%;
+        padding-bottom: 5rem;
+        .toggle{
+            display: none;
+        }
+        .col1{
+            width: 30%;
+        }
+        .col2{
+            width: 70%;
+            overflow: hidden;
+            overflow-x: scroll;
+            min-height: 80vh;
+        }
+        @media screen and (max-width: 890px) {
+            flex-direction: column;
+            position: relative;
+            
+            .col1{
+                display: none;
+            }
+            .col2{
+                width: 100%;
+            }
+
+        }
+    }
+}
