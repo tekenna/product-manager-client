@@ -11,8 +11,8 @@ function Product({ product, index }) {
     e.preventDefault()
     console.log(_id)
     axios.delete(`https://productscontroller.herokuapp.com/api/delete`, {id: _id})
-      .then(res => console.log("del",res))
-      .catch(err=> console.log(err))
+      // .then(res => console.log("del",res))
+      // .catch(err=> console.log(err))
   }
   
   

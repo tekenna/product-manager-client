@@ -19,10 +19,10 @@ function Upload() {
 
         axios.post("https://api.cloudinary.com/v1_1/fullstack-login-register/image/upload", formData)
             .then(res => {
-                console.log(res.data.secure_url)
+                // console.log(res.data.secure_url)
                 setUrl(res.data.secure_url)
             })
-            .catch(err=>console.log(err))
+            // .catch(err=>console.log(err))
     }
     const handleSubmit = (e) => {
         e.preventDefault()

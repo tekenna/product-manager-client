@@ -10,9 +10,9 @@ function Products() {
         axios.get("https://productscontroller.herokuapp.com/api/getAll")
             .then((res) => {
                 setState(res.data.products)
-                console.log(res)
+                // console.log(res)
             })
-            .catch(err=> console.log(err))
+            // .catch(err=> console.log(err))
     })
     return (
         <div className='products_wrapper'>
