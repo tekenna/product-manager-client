@@ -21,10 +21,10 @@ function Products() {
                 <div className="top">
                     <div className="col1">#</div>
                     <div className="col2">Image</div>
-                    <div className="col3">name</div>
-                    <div className="col4">price</div>
+                    <div className="col3">Name</div>
+                    <div className="col4">Price</div>
                     <div className="col5">Type</div>
-                    <div className="col6">Descrption</div>
+                    <div className="col6">Description</div>
                     <div className="col7">Del</div>
                 </div>
                 <div className="products">

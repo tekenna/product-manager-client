@@ -46,14 +46,14 @@ function Upload() {
         <div className='uploads'>
             <h3>Update Products</h3>
             <span className="base"></span>
-            <span>Fill in the form to upddate the products on the dashboard</span>
+            <span>Fill in the form to update the products on the dashboard</span>
             <form action="">
                 {err !== "" ? <span style={{textAlign: "center",color:"red",fontSize:"0.7rem", padding:"0.5rem"}}>{err}</span> : ""}
                 {url!==""?"":<span style={{textAlign: "center",color:"gray",fontSize:"0.7rem", padding:"0.5rem"}}>{loading}</span>} 
                 <div className="feild">
                     <div className="image_wrapper">
-                        <input className='file' type="file" accept='Image/*' onChange={(e) => setState({ ...state, image: e.target.files[0] })} />
-                        <button onClick={(e)=>uploadImg(e)}>upload Image</button>
+                        <input className='file' type="file" accept='Image/*' onChange={(e) => setState({ ...state, image: e.target.files[0] })} required />
+                        <button onClick={(e)=>uploadImg(e)}>Upload Image</button>
                     </div>
                 </div>
                 <div className="feild">

@@ -18,6 +18,12 @@
             }
         }
     }
+    .controller{
+        display: none;
+        @media screen and (max-width: 890px){
+            display: block;
+        }
+    }
     .icon{
         font-size: 3rem;
     }

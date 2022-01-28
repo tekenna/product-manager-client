@@ -11,7 +11,9 @@ function App() {
       <div className="top">
         <span>admin<span>Panel</span></span>
       </div>
-      {toggle?<BiMessageSquareAdd onClick={()=>setToggle(!toggle)} className='icon' />:<BiMessageSquareMinus onClick={()=>setToggle(!toggle)} className='icon' />}
+      <div className="controller">
+        {toggle?<BiMessageSquareAdd onClick={()=>setToggle(!toggle)} className='icon' />:<BiMessageSquareMinus onClick={()=>setToggle(!toggle)} className='icon' />}
+      </div>
       <div className="body">
         <div style={toggle ? { display: "none" } : {
           display: "flex",
