@@ -2,6 +2,7 @@ import React, {useState,useEffect} from 'react';
 import Product from './Product';
 import "../styles/products.scss"
 import axios from 'axios';
+import Wait from './Wait';
 
 function Products() {
     const [state, setState] = useState([])
@@ -10,10 +11,9 @@ function Products() {
         axios.get("https://productscontroller.herokuapp.com/api/getAll")
             .then((res) => {
                 setState(res.data.products)
-                // console.log(res)
             })
-            // .catch(err=> console.log(err))
     })
+    const returnEmpty = ()=> <Wait />
     return (
         <div className='products_wrapper'>
             <h3>All Products</h3>
@@ -28,7 +28,7 @@ function Products() {
                     <div className="col7">Del</div>
                 </div>
                 <div className="products">
-                    {state === undefined ? <img width={"7rem"} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPxlhM7lqxsYjYDk0p1ikp7JM4JA7b6GH_Ag&usqp=CAU' alt='loading' /> :
+                    {state === [] ? returnEmpty():
                         state.map((product) => <Product key={product._id} index={state.indexOf(product)} product={product} />)}
                 </div>
             </div>

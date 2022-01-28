@@ -10,7 +10,9 @@ function Upload() {
         description: ""
     })
     const [url, setUrl] = useState("")
+    const [loading, setLoading] = useState("")
     const { image, name, price, type, description } = state
+    const [err, setErr] = useState("")
     const uploadImg = (e) => {
         e.preventDefault()
         const formData = new FormData()
@@ -18,15 +20,15 @@ function Upload() {
         formData.append("upload_preset", "ml_default")
 
         axios.post("https://api.cloudinary.com/v1_1/fullstack-login-register/image/upload", formData)
-            .then(res => {
-                // console.log(res.data.secure_url)
+            .then((res) => {
+                setLoading("Loading Image...")
                 setUrl(res.data.secure_url)
             })
-            // .catch(err=>console.log(err))
     }
     const handleSubmit = (e) => {
         e.preventDefault()
         if (url !== "") {
+            setErr("")
             axios.post("https://productscontroller.herokuapp.com/api/create", {
                     image: url,
                     name: name,
@@ -34,8 +36,10 @@ function Upload() {
                     type: type,
                     description: description
             })
-                .then(res =>console.log(res))
-                .catch(err=> console.log(err))
+                // .then(res =>console.log(res))
+                // .catch(err=> console.log(err))
+        } else {
+            setErr('Image has to be uploaded!!, Kindly Choose a file and click on "Uplaod Image"')
         }
     }
     return (
@@ -44,6 +48,8 @@ function Upload() {
             <span className="base"></span>
             <span>Fill in the form to upddate the products on the dashboard</span>
             <form action="">
+                {err !== "" ? <span style={{textAlign: "center",color:"red",fontSize:"0.7rem", padding:"0.5rem"}}>{err}</span> : ""}
+                {url!==""?"":<span style={{textAlign: "center",color:"gray",fontSize:"0.7rem", padding:"0.5rem"}}>{loading}</span>} 
                 <div className="feild">
                     <div className="image_wrapper">
                         <input className='file' type="file" accept='Image/*' onChange={(e) => setState({ ...state, image: e.target.files[0] })} />
